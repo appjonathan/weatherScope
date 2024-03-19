@@ -75,9 +75,23 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3); /* Schwarz mit 50% Transparenz */
+  color: rgba(255, 255, 255, 0.5); /* Weißer Text */
+  padding: 5px 0; /* Reduzieren Sie den vertikalen Abstand auf 5px, 0 horizontal */
+  font-size: 1vw; /* Reduzieren Sie die Schriftgröße */
+  border-radius: 10px; /* Fügen Sie abgerundete Ecken hinzu */
+  width: 60%;
+}
+
 /* Media Query für kleinere Bildschirme */
 @media (max-width: 600px) {
- 
+
   .header {
     font-size: 6vw;
   }
