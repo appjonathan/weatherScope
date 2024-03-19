@@ -1,5 +1,5 @@
 import React from 'react';
-import { WiDaySunny, WiRain, WiSnow, WiCloud, WiFog, WiThunderstorm, WiShowers, WiHail, WiSleet, WiDust, WiFogAlt, WiSmoke, WiStrongWind, WiTornado, WiHurricane, WiSnowflakeCold } from 'react-icons/wi';
+import { WiDaySunny, WiRain, WiSnow, WiCloud, WiFog, WiThunderstorm, WiShowers, WiHail, WiSleet, WiDust, WiSmoke, WiStrongWind, WiTornado, WiHurricane, WiSnowflakeCold } from 'react-icons/wi';
 
 export function getWeatherIcon(weather) {
   switch (weather) {
@@ -24,7 +24,7 @@ export function getWeatherIcon(weather) {
     case 'Dust':
       return <WiDust />;
     case 'Fog':
-      return <WiFogAlt />;
+      return <WiFog />;
     case 'Smoke':
       return <WiSmoke />;
     case 'Strong Wind':
