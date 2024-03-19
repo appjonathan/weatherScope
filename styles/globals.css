@@ -1,0 +1,105 @@
+.container {
+  color:#000000;
+  max-width: 95%; 
+  margin: 2vh auto;
+  padding: 2vh; 
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background-color: #cda59b;
+}
+
+.header {
+  text-align: center;
+  font-size: 4vw; 
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon {
+  font-size: 15vw;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input, button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 7% ;
+  padding: 1vh;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 2vw;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 60%;
+  text-align: center; 
+}
+
+button {
+  background-color: rgb(144, 86, 191);
+  color: #000000;
+  width: 15%; 
+  cursor: pointer;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vh auto;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  font-size: 2vw;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 600px) {
+ 
+  .header {
+    font-size: 6vw;
+  }
+
+  .icon {
+    font-size: 20vw;
+  }
+
+  input, button {
+    font-size: 3vw;
+    height: 7vh; /* Setzen Sie die gleiche Höhe */
+  }
+
+  input {
+    width: 60%; /* Setzen Sie die Breite auf 70% */
+  }
+
+  button {
+    width: 15%; /* Setzen Sie die Breite auf 25% */
+  }
+
+  .weatherInfo {
+    font-size: 4vw;
+  }
+}
