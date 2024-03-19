@@ -39,3 +39,10 @@ export function getWeatherIcon(weather) {
       return null;
   }
 }
+
+const WeatherIconPage = () => {
+  // render logic for the page
+  return <div>Weather Icon Page</div>;
+}
+
+export default WeatherIconPage;
