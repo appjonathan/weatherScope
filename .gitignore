@@ -26,4 +26,7 @@ yarn-error.log*
 .env*.local
 
 # terraform
-terraform/
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
