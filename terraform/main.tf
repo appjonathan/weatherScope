@@ -69,21 +69,6 @@ resource "aws_launch_configuration" "weatherapp-main-instance" {
   }
 }
 
-// Auto Scaling Gruppe
-resource "aws_autoscaling_group" "weatherapp-auto-scaling" {
-  desired_capacity   = 1 // Gewünschte Kapazität der Auto Scaling Gruppe
-  launch_configuration = aws_launch_configuration.weatherapp-main-instance.name // Verwendet die oben definierte Launch-Konfiguration
-  max_size           = 3 // Maximale Größe der Auto Scaling Gruppe
-  min_size           = 1 // Minimale Größe der Auto Scaling Gruppe
-  vpc_zone_identifier  = ["subnet-00e3b4011fa9ae70b", "subnet-07506b97a1c362329", "subnet-0a4fa22c17231755f"] // Subnetz-IDs für die Auto Scaling Gruppe
-
-  target_group_arns = [aws_lb_target_group.weatherapp-target-group.arn] // Zielgruppen für die Load Balancer
-
-  lifecycle {
-    create_before_destroy = true // Erstellt eine neue Ressource, bevor die alte zerstört wird
-  }
-}
-
 // Load Balancer
 resource "aws_lb" "weatherapp-load-balancer" {
   name               = "weatherapp-load-balancer" 
@@ -110,6 +95,21 @@ resource "aws_lb_listener" "front_end" {
   default_action {
     type             = "forward" // Typ der Standardaktion
     target_group_arn = aws_lb_target_group.weatherapp-target-group.arn // ARN der Zielgruppe für die Standardaktion
+  }
+}
+
+// Auto Scaling Gruppe
+resource "aws_autoscaling_group" "weatherapp-auto-scaling" {
+  desired_capacity   = 1 // Gewünschte Kapazität der Auto Scaling Gruppe
+  launch_configuration = aws_launch_configuration.weatherapp-main-instance.name // Verwendet die oben definierte Launch-Konfiguration
+  max_size           = 3 // Maximale Größe der Auto Scaling Gruppe
+  min_size           = 1 // Minimale Größe der Auto Scaling Gruppe
+  vpc_zone_identifier  = ["subnet-00e3b4011fa9ae70b", "subnet-07506b97a1c362329", "subnet-0a4fa22c17231755f"] // Subnetz-IDs für die Auto Scaling Gruppe
+
+  target_group_arns = [aws_lb_target_group.weatherapp-target-group.arn] // Zielgruppen für die Load Balancer
+
+  lifecycle {
+    create_before_destroy = true // Erstellt eine neue Ressource, bevor die alte zerstört wird
   }
 }
 
