@@ -36,8 +36,6 @@ export function getWeatherIcon(weather) {
       return <WiHurricane />;
     case 'Cold':
       return <WiSnowflakeCold />;
-    case 'Haze':
-      return <WiDayHaze />;
     default:
       return null;
   }
