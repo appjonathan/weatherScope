@@ -1,6 +1,6 @@
 // AWS Provider Konfiguration
 provider "aws" {
-  region = "eu-central-1" // Region für die AWS-Ressourcen
+  region = "eu-central-1"
   # access_key = ""
   # secret_key = ""
 }
@@ -8,7 +8,7 @@ provider "aws" {
 // Sicherheitsgruppe für die EC2-Instanz
 resource "aws_security_group" "weatherapp-sg" {
   name        = "weatherapp-sg"
-  description = "Security Group for the  main-instance"
+  description = "Security Group for the main-instance"
 
   ingress {
     from_port   = 22
@@ -16,7 +16,6 @@ resource "aws_security_group" "weatherapp-sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   ingress {
     from_port   = 80
     to_port     = 80
